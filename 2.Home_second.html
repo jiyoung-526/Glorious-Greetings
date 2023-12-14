@@ -14,16 +14,22 @@
     margin: 0;
     font-family: 'Noto Serif KR', serif;
     background-color: black;
-    background-image: url('Asset/BackGrain.png');
+    background-image: url('../Asset/BackGrain.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
   }
   .gallery-wrapper {
     display: flex;
     justify-content: center;
     overflow-x: hidden; 
     width: 100%; /* 전체 뷰포트 너비 사용 */
+    margin: auto;
   }
   .gallery {
     display: grid;
