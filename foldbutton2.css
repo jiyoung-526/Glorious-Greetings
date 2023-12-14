@@ -12,7 +12,7 @@
         background-color: rgba(0, 0, 0, 0);
         font-family: 'Noto Serif KR', serif;
         color: white;
-        font-size: 0.9em; /*펼쳐보기, 모아보기 크기*/
+        font-size: 0.75em; /*펼쳐보기, 모아보기 크기*/
         font-weight: lighter;
         margin: 0 8px;
         padding: 25px 20px;
