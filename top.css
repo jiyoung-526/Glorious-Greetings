@@ -1,0 +1,20 @@
+.logo {
+    position: absolute;
+    top: 2.5vh;
+    left: 2vh;
+}
+.logo img {
+    width: 15vh;
+    height: auto;
+}
+.icon {
+    position: absolute;
+    top: 2.4vh;
+    right: 2.4vh;
+    cursor: pointer;
+    z-index: 1001;
+}
+.icon img {
+    width: 2.5vh;
+    height: auto;
+}

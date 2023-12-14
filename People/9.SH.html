@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메인 홈 - 독립운동가 목소리 추정 프로젝트</title>
+<link rel="stylesheet" type="text/css" href="../top.css">
+<link rel="stylesheet" type="text/css" href="../nav.css">
+<link rel="stylesheet" type="text/css" href="../stop.css">
+<link rel="stylesheet" type="text/css" href="../scrollTop.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300&family=Oswald:wght@200&family=Young+Serif&display=swap');
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif KR', serif;
+    text-align: center;
+    background-color: black;
+  }
+  
+  video {
+            width: 70%;
+            display: block;
+            margin: 0 auto;
+            padding-top: 5em;
+            align-items: center;
+            justify-content: center;
+        }
+    
+.container{
+        width: 68%;
+        margin: 0 auto;
+        padding-top: 2em;
+        padding-bottom: 7em;
+        color: white;
+        line-height: 2;
+        text-align: left;
+    }
+
+.container .Name{
+    font-size: 4.3vw;
+    padding-bottom: 10px;
+}
+.container .letter{
+    font-size: 1.8vw;
+}
+.white-line{
+    height: 0.2px; 
+    background-color: rgb(48, 48, 48);
+    margin: 4em auto;
+}
+.container .key{
+    padding-bottom: 3em;
+}
+.container .key_title{
+    font-size: 2.2vw;
+}
+.container .key_sub{
+    font-size: 1.6vw;
+}
+
+</style>
+</head>
+
+<body>
+<div class="logo">
+    <a href="../1.Main.html"><img src="../Asset/logo.png" alt="로고"></a>
+</div>
+<div class="icon" onclick="toggleNavbar()">
+    <img src="../Asset/icon.png" alt="메뉴아이콘">
+</div>
+<div class="navbar" id="navbar">
+  <a href="../3.1.About_Project.html">프로젝트 소개</a>
+  <a href="../3.2.Exhibition.html">전시 안내</a>
+  <a href="../3.3.Thank.html">감사한 분들</a>
+</div>
+
+<video id="videoPlayer" src="../Asset/Video/9.mp4" autoplay></video>
+    <button id="togglePlay" class="video-control">멈춤</button>
+
+    <script>
+        const videoPlayer = document.getElementById('videoPlayer');
+        const togglePlayButton = document.getElementById('togglePlay');
+
+        togglePlayButton.addEventListener('click', function() {
+            if (videoPlayer.paused) {
+                videoPlayer.play();
+                togglePlayButton.textContent = '멈춤';
+            } else {
+                videoPlayer.pause();
+                togglePlayButton.textContent = '이어듣기';
+            }
+        });
+    </script>
+
+<div class="container">
+    <div class = 'Name'>심훈</div>
+    <div class = 'letter'>1919년 8월 29일, 어머님께 쓴 옥중 편지</div>
+
+    <div class="white-line"></div>
+
+    <div class="key">
+        <div class="key_title">✢ 3·1 운동</div>
+        <div class="key_sub"><p>경성 제1고등보통학교(현 서울경기고등학교)를 다니던 심훈은 4학년이던 1919년에 3·1운동에 참여한다.</p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 서대문형무소</div>
+        <div class="key_sub"><p>3월 5일, 남대문 학생시위(3·5학생운동) 도중 구속되어 8개월형을 받고 서대문형무소에 투옥되었다.</p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 소설 <그날이 오면></div>
+        <div class="key_sub"><p>심훈의 대표작 <그날이 오면>은 3·1운동 기념일에 발표된 시로, 시집으로 발간될 예정이었지만 일제의 검열로 인해 출판이 거절당하였다.</p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 소설 <상록수></div>
+        <div class="key_sub"><p>1935년 동아일보 창간 15주년 기념소설공모전에 장편 <상록수>를 공모하여 당선되었다. <상록수>는 브나로드 운동(농총계몽운동)을 그려낸
+            장편 소설로, <그날이 오면>과 함께 심훈의 대표작으로 꼽힌다.
+        </p>
+        </div>
+    </div>
+</div>
+
+<button id="scrollTopButton" title="맨 위로 가기">↑</button>
+<script src="../topbutton.js"></script>
+
+<script>
+function toggleNavbar() {
+  var navbar = document.getElementById("navbar");
+  if (navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  } else {
+    navbar.classList.add('active');
+  }
+}
+function toggleNavbar(event) {
+  var navbar = document.getElementById("navbar");
+  navbar.classList.toggle('active');
+  event.stopPropagation();
+}
+document.addEventListener('click', function(event) {
+  var navbar = document.getElementById('navbar');
+  if (!event.target.closest('.icon') && navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  }
+});
+</script>
+
+</body>
+</html>

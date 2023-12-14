@@ -1,0 +1,11 @@
+.video-control {
+  display: block;
+  margin: 1.5vh auto;
+  padding: 1vh 2vh;
+  background-color: #000000;
+  color: rgb(78, 78, 78);
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.55vh;
+  border: none;
+  cursor: pointer;
+}

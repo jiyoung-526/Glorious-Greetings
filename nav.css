@@ -1,0 +1,23 @@
+.navbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0);
+    width: 26.5vh;
+    height: 6.5vh;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    flex-direction: column; /* 세로 나열 */
+    padding-top: 6.5vh; /* 아이콘과 겹치지 않도록 패딩 추가 */
+  }
+  .navbar.active {
+    display: flex;
+  }
+  .navbar a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 1.6vh;
+    text-align: center;
+  }

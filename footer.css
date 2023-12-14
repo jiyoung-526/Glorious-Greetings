@@ -1,0 +1,50 @@
+footer {
+    width: 100%;
+    background-color: #000000; 
+    color: white;
+    padding: 2vh 0;
+    padding-top: 6.5vh;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* 내부 요소들을 양 끝으로 분리 */
+    align-items: flex-start; /* 내부 요소들을 상단 정렬 */
+    width: 92%; /* 전체 푸터 너비의 80% 사용 */
+    margin: 0 auto; /* 가운데 정렬 */
+    position: relative;
+}
+
+.footer-content::before {
+    content: '';
+    position: absolute; /* 절대 위치 설정 */
+    top: 0; /* 상단에 위치 */
+    left: 50%; /* 좌우 가운데 */
+    transform: translateX(-50%); /* 중앙 */
+    width: 100%;
+    height: 0.1vh; 
+    background-color: rgb(48, 48, 48);
+}
+
+.footer-section {
+    margin-top: 2.7vh; /* 선과의 간격 */
+}
+
+.main-section {
+    color: #9a9a9a;
+    width: 70%; /* 주요 섹션의 너비를 70%로 설정 */
+    text-align: left;
+    line-height: 1; /* 행간 설정 */
+    font-size: 1.27vh;
+}
+
+.side-section {
+    color: #9a9a9a;
+    line-height: 0.5;
+    font-size: 1.27vh;
+    width: 30%; /* 부가 섹션의 너비를 30%로 설정 */
+    text-align: right; /* 텍스트를 우측 정렬 */
+    display: flex;
+    flex-direction: column; /* 요소들을 세로로 나열 */
+    padding-bottom: 6.2vh;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메인 홈 - 독립운동가 목소리 추정 프로젝트</title>
+<link rel="stylesheet" type="text/css" href="top.css">
+<link rel="stylesheet" type="text/css" href="nav.css">
+<link rel="stylesheet" type="text/css" href="footer.css">
+<link rel="stylesheet" type="text/css" href="scrollTop.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300&family=Oswald:wght@200&family=Young+Serif&display=swap');
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif KR', serif;
+    text-align: center;
+    background-color: black;
+  }
+  .content{
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
+  }
+
+  .title img{
+    padding-top: 5em;
+    padding-bottom: 1em;
+    width: 15em;
+  }
+  .Subtitle{
+    font-size: 1.1em; /* 소제목 글자 크기 */
+    color: #dbdbdb; /* 소제목 글자 색상 */
+  }
+  .Subtitle2{
+    padding-top: 5em;
+    font-size: 1.1em; /* 소제목 글자 크기 */
+    color: #dbdbdb; /* 소제목 글자 색상 */
+  }
+  .video {
+    margin-top: 70px; /* 영상 위 여백 */
+  }
+
+  .description {
+    margin-top: 70px; /* 설명 텍스트 위 여백 */
+    font-size: 0.9em; 
+    color: #d5d5d5; 
+    line-height: 1.85; /* 행간 설정 */
+    width: 70%; /* 가로 폭 50%로 */
+    margin-left: auto; /* 좌측 마진을 자동으로 설정하여 중앙 정렬 */
+    margin-right: auto; /* 우측 마진을 자동으로 설정하여 중앙 정렬 */
+    max-width: 630px; /* 최대 가로 폭을 800px로 설정 */
+  }
+</style>
+</head>
+<body>
+
+<div class="logo">
+    <a href="1.Main.html"><img src="Asset/logo.png" alt="로고"></a>
+</div>
+
+<div class="icon" onclick="toggleNavbar()">
+    <img src="Asset/icon.png" alt="메뉴아이콘">
+</div>
+
+<div class="navbar" id="navbar">
+  <a href="3.1.About_Project.html">프로젝트 소개</a>
+  <a href="3.2.Exhibition.html">전시 안내</a>
+  <a href="3.3.Thank.html">감사한 분들</a>
+</div>
+
+<div class="content">
+    <div class="title">
+        <img src="Asset/logo.png" alt="Project Logo">
+    </div>
+
+    <div class="Subtitle">Face2Speech AI 기반 독립운동가 목소리 추정 프로젝트</div>
+
+    <div class="video">
+        <iframe width="570" height="325" src="https://www.youtube.com/embed/4yYa_iGs6II?si=d6YPeE4A3CjVJV0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="description">
+        <p><눈부신 안부>는 대한민국 자유정신의 뿌리로서 독립운동가의 삶과 정신을 기억하기 위한 새로운 시도입니다. 
+        국가적 관점에서 독립운동가를 희생, 고통, 수모의 이미지로 바라보는 시선에서 벗어나 독립운동가 개개인이 주체적 삶의 존재로서 기억되고 주목받을 수 있도록 합니다.
+        수형기록표에 기재된 이름, 죄명, 사진 등의 정보로 남겨진 독립운동가의 목소리를 Face to Specch 기술을 활용해 되찾아줌으로써, 개인의 존엄한 삶을 잃지 않고자 노력했던 인물로서 그들의 현존감을 회복하고자 합니다.
+        </p>
+    </div>
+
+    <div class="Subtitle2">독립운동가 10인의 목소리</div>
+
+    <div class="description">
+      <p><눈부신 안부>는 Face2Speech 기술로 추정한 독립운동가의 목소리를 매개로 잊혀가는 그들의 이야기를 다시금 현재로 불러옵니다. </br></br>
+        Face2Speech는 얼굴 특성과 목소리의 높은 연관성에 기반해, 얼굴 골격과 이목구비 특징을 분석하여 목소리를 추정하는 인공지능 모델입니다.
+        현재까지 발표된 Face2Speech 선행 연구는 모두 영어 데이터셋을 활용하고 있기에 <눈부신 안부>에서는 새롭게 한국인 - 한국어 데이터셋 구축과
+        모델 학습을 시도했습니다.</br></br>
+        목소리 추정 방식은 다음의 과정을 따릅니다. 수형기록표 혹은 일제감시대상인물카드 속 사진으로부터 독립운동가의 얼굴 골격과 이목구비 특성을 분석합니다. 
+        그와 가장 유사도가 높은 인물들을 확률 기반으로 나열하고, 유의미한 확률 안에서 개별 확률에 비례하게 각 인물들의 목소리 특성 값을 보간시켜 새로운 목소리 특성을 생성합니다. 
+        생성된 목소리 특성 값과 그의 편지 텍스트를 사용해, 특정 텍스트에 대한 목소리 파일을 추출합니다.
+        </br></br>
+        * 10인의 독립운동가 사료는 독립기념관, 국사편찬위원회, 부산박물관과 후손분께 동의를 받아 활용하였으며 추정된 독립운동가의 목소리는 실제와 다를 수 있음을 알려드립니다.
+      </p>
+
+    </div>
+</div>
+
+<script>
+function toggleNavbar() {
+  var navbar = document.getElementById("navbar");
+  if (navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  } else {
+    navbar.classList.add('active');
+  }
+}
+function toggleNavbar(event) {
+  var navbar = document.getElementById("navbar");
+  navbar.classList.toggle('active'); // 'active' 클래스를 토글
+  event.stopPropagation();
+}
+document.addEventListener('click', function(event) {
+  var navbar = document.getElementById('navbar');
+  // 클릭된 요소가 네비게이션바를 토글하는 아이콘이 아닐 경우 네비게이션바 비활성화
+  if (!event.target.closest('.icon') && navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  }
+});
+</script>
+
+<button id="scrollTopButton" title="맨 위로 가기">↑</button>
+<script src="../topbutton.js"></script>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section main-section">
+            <p>Team Graffiti. all rights reserved.</p>
+            <p></br></br>t. +82 10 7773 5842</p>
+            <p>m. kimgy0526@naver.com</p>
+        </div>
+        <div class="footer-section side-section">
+            <p>사단법인 김의기 기념사업회</p>
+            <p>당진시청 문화관광과</p>
+            <p>부산박물관</p>
+            <p>국사편찬위원회</p>
+            <p>독립기념관</p>
+            <p>김란사 후손 김영택님</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

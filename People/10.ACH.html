@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메인 홈 - 독립운동가 목소리 추정 프로젝트</title>
+<link rel="stylesheet" type="text/css" href="../top.css">
+<link rel="stylesheet" type="text/css" href="../nav.css">
+<link rel="stylesheet" type="text/css" href="../stop.css">
+<link rel="stylesheet" type="text/css" href="../scrollTop.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300&family=Oswald:wght@200&family=Young+Serif&display=swap');
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif KR', serif;
+    text-align: center;
+    background-color: black;
+  }
+  
+  video {
+            width: 70%;
+            display: block;
+            margin: 0 auto;
+            padding-top: 5em;
+            align-items: center;
+            justify-content: center;
+        }
+    
+.container{
+        width: 68%;
+        margin: 0 auto;
+        padding-top: 2em;
+        padding-bottom: 7em;
+        color: white;
+        line-height: 2;
+        text-align: left;
+    }
+
+.container .Name{
+    font-size: 4.3vw;
+    padding-bottom: 10px;
+}
+.container .letter{
+    font-size: 1.8vw;
+}
+.white-line{
+    height: 0.2px; 
+    background-color: rgb(48, 48, 48);
+    margin: 4em auto;
+}
+.container .key{
+    padding-bottom: 3em;
+}
+.container .key_title{
+    font-size: 2.2vw;
+}
+.container .key_sub{
+    font-size: 1.6vw;
+}
+
+</style>
+</head>
+
+<body>
+<div class="logo">
+    <a href="../1.Main.html"><img src="../Asset/logo.png" alt="로고"></a>
+</div>
+<div class="icon" onclick="toggleNavbar()">
+    <img src="../Asset/icon.png" alt="메뉴아이콘">
+</div>
+<div class="navbar" id="navbar">
+  <a href="../3.1.About_Project.html">프로젝트 소개</a>
+  <a href="../3.2.Exhibition.html">전시 안내</a>
+  <a href="../3.3.Thank.html">감사한 분들</a>
+</div>
+
+<video id="videoPlayer" src="../Asset/Video/10.mp4" autoplay></video>
+    <button id="togglePlay" class="video-control">멈춤</button>
+
+    <script>
+        const videoPlayer = document.getElementById('videoPlayer');
+        const togglePlayButton = document.getElementById('togglePlay');
+
+        togglePlayButton.addEventListener('click', function() {
+            if (videoPlayer.paused) {
+                videoPlayer.play();
+                togglePlayButton.textContent = '멈춤';
+            } else {
+                videoPlayer.pause();
+                togglePlayButton.textContent = '이어듣기';
+            }
+        });
+    </script>
+
+<div class="container">
+    <div class = 'Name'>안창호</div>
+    <div class = 'letter'>1932년 1월 16일, 사랑하는 아내에게 쓴 편지</div>
+
+    <div class="white-line"></div>
+
+    <div class="key">
+        <div class="key_title">✢ 애국계몽운동</div>
+        <div class="key_sub"><p>1897년, 독립협회에 가입하며 민족운동에 눈 뜬 안창호는 1907년 "대한사람은 실력을 길러야 한다"고
+          역설하는 애국계몽운동을 펼쳤다.
+        </p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 이토 히로부미와의 회동</div>
+        <div class="key_sub"><p>1907년, 이토 히로부미의 제의로 그와 회동을 가졌다. 이때 근대화 등을 명목으로 식민지배를 합리화하던
+          이토 히로부미의 주장에 일본의 메이지 유신 등을 근거로 들며 정면으로 반박한다.
+        </p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 미국 한인사회의 지도자</div>
+        <div class="key_sub"><p>재미 한인교포의 단결과 게몽을 위해 1903년 9월, 상항친목회를 조직했다. 1905년 러일전쟁에서 승리한
+          일본의 식민지배에 대비하여 공립협회를 창립하고, 공립신보를 발행하는 등 국권회복을 위한 활동을 전개하였다.
+        </p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 임시정부</div>
+        <div class="key_sub"><p>한성, 상하이, 블라디보스토크에서 수립된 3개의 임시정부에서 내무총장 및 노동총판을 맡게 되며 3개의
+          임시정부를 통합하는 운동을 적극적으로 추진하여 정통성을 가진 통일정부를 상하이에 출범시켰다.
+        </p>
+        </div>
+    </div>
+</div>
+
+<button id="scrollTopButton" title="맨 위로 가기">↑</button>
+<script src="../topbutton.js"></script>
+
+<script>
+function toggleNavbar() {
+  var navbar = document.getElementById("navbar");
+  if (navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  } else {
+    navbar.classList.add('active');
+  }
+}
+function toggleNavbar(event) {
+  var navbar = document.getElementById("navbar");
+  navbar.classList.toggle('active');
+  event.stopPropagation();
+}
+document.addEventListener('click', function(event) {
+  var navbar = document.getElementById('navbar');
+  if (!event.target.closest('.icon') && navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  }
+});
+</script>
+
+</body>
+</html>

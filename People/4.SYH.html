@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메인 홈 - 독립운동가 목소리 추정 프로젝트</title>
+<link rel="stylesheet" type="text/css" href="../top.css">
+<link rel="stylesheet" type="text/css" href="../nav.css">
+<link rel="stylesheet" type="text/css" href="../stop.css">
+<link rel="stylesheet" type="text/css" href="../scrollTop.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300&family=Oswald:wght@200&family=Young+Serif&display=swap');
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif KR', serif;
+    text-align: center;
+    background-color: black;
+  }
+  
+  video {
+            width: 70%;
+            display: block;
+            margin: 0 auto;
+            padding-top: 5em;
+            align-items: center;
+            justify-content: center;
+        }
+    
+.container{
+        width: 68%;
+        margin: 0 auto;
+        padding-top: 2em;
+        padding-bottom: 7em;
+        color: white;
+        line-height: 2;
+        text-align: left;
+    }
+
+.container .Name{
+    font-size: 4.3vw;
+    padding-bottom: 10px;
+}
+.container .letter{
+    font-size: 1.8vw;
+}
+.white-line{
+    height: 0.2px; 
+    background-color: rgb(48, 48, 48);
+    margin: 4em auto;
+}
+.container .key{
+    padding-bottom: 3em;
+}
+.container .key_title{
+    font-size: 2.2vw;
+}
+.container .key_sub{
+    font-size: 1.6vw;
+}
+
+</style>
+</head>
+
+<body>
+<div class="logo">
+    <a href="../1.Main.html"><img src="../Asset/logo.png" alt="로고"></a>
+</div>
+<div class="icon" onclick="toggleNavbar()">
+    <img src="../Asset/icon.png" alt="메뉴아이콘">
+</div>
+<div class="navbar" id="navbar">
+  <a href="../3.1.About_Project.html">프로젝트 소개</a>
+  <a href="../3.2.Exhibition.html">전시 안내</a>
+  <a href="../3.3.Thank.html">감사한 분들</a>
+</div>
+
+<video id="videoPlayer" src="../Asset/Video/4.mp4" autoplay></video>
+    <button id="togglePlay" class="video-control">멈춤</button>
+
+    <script>
+        const videoPlayer = document.getElementById('videoPlayer');
+        const togglePlayButton = document.getElementById('togglePlay');
+
+        togglePlayButton.addEventListener('click', function() {
+            if (videoPlayer.paused) {
+                videoPlayer.play();
+                togglePlayButton.textContent = '멈춤';
+            } else {
+                videoPlayer.pause();
+                togglePlayButton.textContent = '이어듣기';
+            }
+        });
+    </script>
+
+<div class="container">
+    <div class = 'Name'>서영해</div>
+    <div class = 'letter'>1942년 3월 25일, 친구 Lia에게 쓴 편지</div>
+
+    <div class="white-line"></div>
+
+    <div class="key">
+        <div class="key_title">✢ 3·1 운동</div>
+        <div class="key_sub"><p>1919년 3·1 운동이 일어나자 만세 운동에 참가한 뒤, 18세의 나이로 중국 상하이에 망명했다.
+          이때부터 '희수'라는 이름 대신 '영해'를 본명으로 사용했다. 상하이 임시정부로 찾아가 대략 1년 반 정도의 시기를 보낸다.
+        </p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 반제국주의세계대회 참가</div>
+        <div class="key_sub"><p>1929년 7월 프랑스 파리에서 열린 제 2회 반제국주의세계대회 참가를 계기로 독립운동가의 길을 걷는다.
+          그는 유창한 프랑스어로 한국 문제를 의제의 중심으로 부각시키며 활약했다.
+        </p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 고려통신사</div>
+        <div class="key_sub"><p>1929년 9월 파리 시내에 고려통신사를 설립해 상하이 임시정부와 긴밀한 관계를 맺으며,
+          독립된 통신사를 통해 독립운동을 본격화하였다.
+        </p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 안창호 석방운동</div>
+        <div class="key_sub"><p>1932년 4월 29일, 안창호가 붙잡힌 사실을 알게 되고, 프랑스 정부를 상대로 석방운동을 전개한다.
+          5월 17일 발표한 '유럽의 자유 양심에 고함'을 통해 안창호 체포를 눈감은 프랑스 정부의 입장을 강력하게 비판했다.
+        </p>
+        </div>
+    </div>
+</div>
+
+<button id="scrollTopButton" title="맨 위로 가기">↑</button>
+<script src="../topbutton.js"></script>
+
+<script>
+function toggleNavbar() {
+  var navbar = document.getElementById("navbar");
+  if (navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  } else {
+    navbar.classList.add('active');
+  }
+}
+function toggleNavbar(event) {
+  var navbar = document.getElementById("navbar");
+  navbar.classList.toggle('active');
+  event.stopPropagation();
+}
+document.addEventListener('click', function(event) {
+  var navbar = document.getElementById('navbar');
+  if (!event.target.closest('.icon') && navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  }
+});
+</script>
+
+</body>
+</html>

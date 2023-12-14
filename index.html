@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>독립운동가 목소리 추정 프로젝트</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300&family=Oswald:wght@200&family=Young+Serif&display=swap');
+
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Noto Serif KR', serif;
+  }
+
+  .content {
+    background-color: black;
+    background-image: url('../Asset/BackGrain.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding-left: 80px;
+    padding-right: 80px;
+    animation: fadeOut 3s ease-out 4s forwards;
+
+    line-height: 2;
+
+    position: relative; /* 오버레이를 위한 상대적 위치 설정 */
+  }
+  .overlay {
+  position: absolute; /* 절대 위치 설정 */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black; /* 검은색 배경 */
+  opacity: 0; /* 초기 투명도 설정 */
+  animation: fadeIn 3s ease-out 4s forwards; /* 페이드인 애니메이션 */
+}
+
+  .star {
+    display: flex;
+    justify-content: center;
+  }
+  .star img{
+    width: 0.8rem;
+    height: auto;
+    padding-bottom: 15px;
+  }
+  
+
+  @keyframes fadeIn {
+  0% {
+    opacity: 0; /* 애니메이션 시작 시 투명도 0% */
+  }
+  100% {
+    opacity: 1; /* 애니메이션 종료 시 투명도 100% */
+  }
+}
+</style>
+</head>
+<body>
+    <div class="content">
+        <div class="star">
+            <img src="Asset/icon.png" alt="icon">
+        </div>
+    
+        <div class="intro">
+            본 프로젝트는 대한민국 자유 정신의 뿌리인 독립운동가의 현존성을 회복하기 위해 기획된 독립운동가 목소리 추정 프로젝트입니다. <br />목소리 감상을 위해 사용하고 계신 전자기기의 음향을 확인하시길 바랍니다.
+        </div>
+
+        <div class="overlay"></div>
+    </div>
+
+<script>
+  setTimeout(function() {
+    window.location.href = "1.Main.html";
+  }, 7000);
+</script>
+
+</body>
+</html>

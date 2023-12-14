@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메인 홈 - 독립운동가 목소리 추정 프로젝트</title>
+<link rel="stylesheet" type="text/css" href="../top.css">
+<link rel="stylesheet" type="text/css" href="../nav.css">
+<link rel="stylesheet" type="text/css" href="../stop.css">
+<link rel="stylesheet" type="text/css" href="../scrollTop.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300&family=Oswald:wght@200&family=Young+Serif&display=swap');
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif KR', serif;
+    text-align: center;
+    background-color: black;
+  }
+  
+  video {
+            width: 70%;
+            display: block;
+            margin: 0 auto;
+            padding-top: 5em;
+            align-items: center;
+            justify-content: center;
+        }
+    
+.container{
+        width: 68%;
+        margin: 0 auto;
+        padding-top: 2em;
+        padding-bottom: 7em;
+        color: white;
+        line-height: 2;
+        text-align: left;
+    }
+
+.container .Name{
+    font-size: 4.3vw;
+    padding-bottom: 10px;
+}
+.container .letter{
+    font-size: 1.8vw;
+}
+.white-line{
+    height: 0.2px; 
+    background-color: rgb(48, 48, 48);
+    margin: 4em auto;
+}
+.container .key{
+    padding-bottom: 3em;
+}
+.container .key_title{
+    font-size: 2.2vw;
+}
+.container .key_sub{
+    font-size: 1.6vw;
+}
+
+</style>
+</head>
+
+<body>
+<div class="logo">
+    <a href="../1.Main.html"><img src="../Asset/logo.png" alt="로고"></a>
+</div>
+<div class="icon" onclick="toggleNavbar()">
+    <img src="../Asset/icon.png" alt="메뉴아이콘">
+</div>
+<div class="navbar" id="navbar">
+  <a href="../3.1.About_Project.html">프로젝트 소개</a>
+  <a href="../3.2.Exhibition.html">전시 안내</a>
+  <a href="../3.3.Thank.html">감사한 분들</a>
+</div>
+
+<video id="videoPlayer" src="../Asset/Video/3.mp4" autoplay></video>
+    <button id="togglePlay" class="video-control">멈춤</button>
+
+    <script>
+        const videoPlayer = document.getElementById('videoPlayer');
+        const togglePlayButton = document.getElementById('togglePlay');
+
+        togglePlayButton.addEventListener('click', function() {
+            if (videoPlayer.paused) {
+                videoPlayer.play();
+                togglePlayButton.textContent = '멈춤';
+            } else {
+                videoPlayer.pause();
+                togglePlayButton.textContent = '이어듣기';
+            }
+        });
+    </script>
+
+<div class="container">
+    <div class = 'Name'>윤봉길</div>
+    <div class = 'letter'>1932년, 두 아들에게 쓴 유서</div>
+
+    <div class="white-line"></div>
+
+    <div class="key">
+        <div class="key_title">✢ 자퇴</div>
+        <div class="key_sub"><p>학교에서 일본인 교사 휘하에서 일본어를 배우고 써야 한다는 것에 불만을 가지고,
+          3·1 운동을 결정적 계기로 자퇴하였다. 학교에 다니는 대신 한학을 배우러 서당을 다니며 학업을 이어갔다.
+        </p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 월진회</div>
+        <div class="key_sub"><p>동네에서 글자를 몰라 아버지의 묘소를 찾지 못하는 농부를 보고 교육에 뜻을 가져 월진회를 조직해
+          야학과 강습회를 열어 문맹 퇴치 및 계몽 운동에 힘썼다.
+        </p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 한인애국단</div>
+        <div class="key_sub"><p>1932년 대한민국 임시정부의 국무령인 김구를 찾아 한인애국단에 입단했다.
+          윤봉길은 공장에서 일하는 동안 공장 내외부에서 김구와 만나 독립운동에 대해 이야기하며 '동경사건'과 같은 일을 맡기로 자처하였다.
+        </p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 훙커우 공원 의거</div>
+        <div class="key_sub"><p>1932년 4월 29일, 상하이 훙커우 공원에서 열린 일본 천황 생일 기념 열병식에서 폭탄을 투척하여
+          일본 총사령관 시라카와 요시노리를 비롯하여 수많은 고위 관부를 살상하였다.
+        </p>
+        </div>
+    </div>
+</div>
+
+<button id="scrollTopButton" title="맨 위로 가기">↑</button>
+<script src="../topbutton.js"></script>
+
+<script>
+function toggleNavbar() {
+  var navbar = document.getElementById("navbar");
+  if (navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  } else {
+    navbar.classList.add('active');
+  }
+}
+function toggleNavbar(event) {
+  var navbar = document.getElementById("navbar");
+  navbar.classList.toggle('active');
+  event.stopPropagation();
+}
+document.addEventListener('click', function(event) {
+  var navbar = document.getElementById('navbar');
+  if (!event.target.closest('.icon') && navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  }
+});
+</script>
+
+</body>
+</html>

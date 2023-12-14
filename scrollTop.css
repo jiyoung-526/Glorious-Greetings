@@ -1,0 +1,15 @@
+#scrollTopButton{
+    position: fixed; 
+    bottom: 2.5vh; /* 하단에서 20px 위 */
+    right: 3.5vh; /* 우측에서 20px 떨어진 위치 */
+    background-color: #9b9b9bbe; 
+    color: black; 
+    border: none; 
+    border-radius: 50%; /* 동그란 모양 */
+    cursor: pointer; 
+    padding: 1.2vh; 
+    font-size: 1.8vh; 
+}
+#scrollTopButton:hover {
+    background-color: #7676769e; 
+}

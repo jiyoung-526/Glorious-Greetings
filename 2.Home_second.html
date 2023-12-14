@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메인 홈 - 독립운동가 목소리 추정 프로젝트</title>
+<link rel="stylesheet" type="text/css" href="top.css">
+<link rel="stylesheet" type="text/css" href="nav.css">
+<link rel="stylesheet" type="text/css" href="foldbutton2.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300&family=Oswald:wght@200&family=Young+Serif&display=swap');
+
+  body, html {
+    margin: 0;
+    font-family: 'Noto Serif KR', serif;
+    background-color: black;
+    background-image: url('../Asset/BackGrain.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .gallery-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden; 
+    width: 100%; /* 전체 뷰포트 너비 사용 */
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 250%); /* 각 컬럼의 크기를 250px로 설정하여 총 5개 배치 */
+    grid-template-rows: repeat(2, 15em); /* 2줄로 설정 */
+    grid-column-gap: 1.4em; /* 박스 사이의 간격 설정 */
+    grid-row-gap: 4em;
+    justify-content: center;
+    padding: 10em;
+  }
+  .gallery .image-box {
+    width: 100%;
+    height: 100%;
+    padding: -5px;
+    background-color: #000000; /* 갤러리 박스 배경색 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* 이미지 위치 조정을 위해 relative 설정 */
+    transition: opacity 0.5s ease-in-out; /* 페이드인 효과를 위한 전환 설정 */
+  }
+   .gallery .image-box img.normal-image {
+        opacity: 1; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 0.6s ease-in-out;
+    }
+
+    .gallery .image-box img.hover-image {
+        opacity: 0; /* 호버 이미지의 초기 투명도 0 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 0.4s ease-in-out;
+    }
+
+    .gallery .image-box:hover img.hover-image {
+        opacity: 1; /* 호버 시 호버 이미지의 투명도 1로 변경 */
+    }
+
+    .gallery .image-box img {
+        position: absolute; /* 이미지를 박스 안에서 절대 위치시킴 */
+        top: 0; /* 이미지 상단을 박스 상단에 맞춤 */
+        left: 0; /* 이미지 좌측을 박스 좌측에 맞춤 */
+        width: 100%; /* 이미지의 가로 폭을 자동으로 조정 */
+        height: 100%; /* 이미지의 세로 폭을 박스에 꽉 차도록 설정 */
+        object-fit: cover; /* 이미지가 박스에 맞지 않을 경우 잘리도록 설정 */
+    }
+
+    .gallery .image-box::after {
+    content: attr(data-text); /* data-text 속성으로 텍스트 설정 */
+    position: absolute;
+    left: 0;
+    color: rgb(158, 158, 158); /* 텍스트 색상 */
+    padding-left: 0px; /* 텍스트 패딩 */
+    padding-top: 5px; padding-bottom: 3px;
+    font-size: 15px;
+    font-weight: lighter;
+    }
+
+    .image-box::after {
+    content: attr(data-text); /* data-text 속성으로 텍스트 설정 */
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: -30px; /* 이미지 아래에 텍스트를 배치 */
+    color: white; /* 텍스트 색상을 흰색으로 설정 */
+    font-family: 'Noto Serif KR', sans-serif;
+    }
+
+    .gallery .image-box:nth-child(odd)::after {
+      bottom: -30px; /* 홀수 번째 박스는 하단에 텍스트 */
+    }
+    .gallery .image-box:nth-child(even)::after {
+      bottom: -30px; /* 짝수 번째 박스는 상단에 텍스트 */
+    }
+
+    @media (max-width: 1024px) {
+    .gallery {
+      grid-template-columns: repeat(2, 200px); /* 화면이 작아질 때 2열로 변경 */
+      grid-template-rows: repeat(5, 200px); /* 5줄로 변경 */
+     }
+    }
+
+</style>
+</head>
+<body>
+
+<div class="logo">
+    <img src="Asset/logo.png" alt="로고">
+</div>
+
+<div class="icon" onclick="toggleNavbar()">
+    <img src="Asset/icon.png" alt="메뉴아이콘">
+</div>
+
+<div class="navbar" id="navbar">
+    <a href="3.1.About_Project.html">프로젝트 소개</a>
+    <a href="3.2.Exhibition.html">전시 안내</a>
+    <a href="3.3.Thank.html">감사한 분들</a>
+</div>
+
+<div class="gallery-wrapper">
+  <div class="gallery">
+      <div class="image-box" data-text="손정도"> 
+        <a href="People/1.SJD.html">
+          <img src="Asset/People/1.png" alt="Image 1" class="normal-image">
+          <img src="Asset/People_hover/1.png" alt="Hover Image 1" class="hover-image">
+        </a> 
+      </div>
+      <div class="image-box" data-text="김지섭"> 
+        <a href="People/2.KJS.html">
+          <img src="Asset/People/2.png" alt="Image 2" class="normal-image">
+          <img src="Asset/People_hover/2.png" alt="Hover Image 2" class="hover-image">
+        </a> 
+      </div>
+      <div class="image-box" data-text="윤봉길"> 
+        <a href="People/3.YBG.html">
+          <img src="Asset/People/3.png" alt="Image 3" class="normal-image">
+          <img src="Asset/People_hover/3.png" alt="Hover Image 3" class="hover-image">
+        </a> 
+      </div>
+      <div class="image-box" data-text="서영해"> 
+        <a href="People/4.SYH.html">
+          <img src="Asset/People/4.png" alt="Image 4" class="normal-image">
+          <img src="Asset/People_hover/4.png" alt="Hover Image 4" class="hover-image">
+        </a> 
+      </div>
+      <div class="image-box" data-text="김란사"> 
+        <a href="People/5.KRS.html">
+          <img src="Asset/People/5.png" alt="Image 5" class="normal-image">
+          <img src="Asset/People_hover/5.png" alt="Hover Image 5" class="hover-image">
+        </a> 
+      </div>
+      <div class="image-box" data-text="이관술"> 
+        <a href="People/6.LGS.html">
+          <img src="Asset/People/6.png" alt="Image 6" class="normal-image">
+          <img src="Asset/People_hover/6.png" alt="Hover Image 6" class="hover-image">
+        </a> 
+      </div>
+      <div class="image-box" data-text="이연호"> 
+        <a href="People/7.LYH.html">
+          <img src="Asset/People/7.png" alt="Image 7" class="normal-image">
+          <img src="Asset/People_hover/7.png" alt="Hover Image 7" class="hover-image">
+        </a> 
+      </div>
+      <div class="image-box" data-text="이육사"> 
+        <a href="People/8.LYS.html">
+          <img src="Asset/People/8.png" alt="Image 8" class="normal-image">
+          <img src="Asset/People_hover/8.png" alt="Hover Image 8" class="hover-image">
+        </a> 
+      </div>
+      <div class="image-box" data-text="심훈"> 
+        <a href="People/9.SH.html">
+          <img src="Asset/People/9.png" alt="Image 9" class="normal-image">
+          <img src="Asset/People_hover/9.png" alt="Hover Image 9" class="hover-image">
+        </a> 
+      </div>
+      <div class="image-box" data-text="안창호"> 
+        <a href="People/10.ACH.html">
+          <img src="Asset/People/10.png" alt="Image 10" class="normal-image">
+          <img src="Asset/People_hover/10.png" alt="Hover Image 10" class="hover-image">
+        </a> 
+      </div>
+    </div>
+</div>
+
+<div class="bottom-buttons">
+    <a href="1.Main.html" class="button unfold">
+        <img src="Asset/unfold.svg" alt="unfold Icon"><span>펼쳐보기</span>
+    </a>
+    <button class="button fold">
+        <img src="Asset/fold.svg" alt="fold Icon"><span>모아보기</span></button>
+</div>
+
+<script>
+function toggleNavbar() {
+  var navbar = document.getElementById("navbar");
+  if (navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  } else {
+    navbar.classList.add('active');
+  }
+}
+function toggleNavbar(event) {
+  var navbar = document.getElementById("navbar");
+  navbar.classList.toggle('active'); // 'active' 클래스를 토글
+  event.stopPropagation();
+}
+document.addEventListener('click', function(event) {
+  var navbar = document.getElementById('navbar');
+  // 클릭된 요소가 네비게이션바를 토글하는 아이콘이 아닐 경우 네비게이션바 비활성화
+  if (!event.target.closest('.icon') && navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var gallery = document.querySelector('.gallery');
+  var scrollWidth = gallery.scrollWidth;
+  var clientWidth = gallery.clientWidth;
+  var scrollPosition = (scrollWidth - clientWidth) / 2;
+  gallery.scrollLeft = scrollPosition;
+});
+</script>
+
+</body>
+</html>

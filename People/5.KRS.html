@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메인 홈 - 독립운동가 목소리 추정 프로젝트</title>
+<link rel="stylesheet" type="text/css" href="../top.css">
+<link rel="stylesheet" type="text/css" href="../nav.css">
+<link rel="stylesheet" type="text/css" href="../stop.css">
+<link rel="stylesheet" type="text/css" href="../scrollTop.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300&family=Oswald:wght@200&family=Young+Serif&display=swap');
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif KR', serif;
+    text-align: center;
+    background-color: black;
+  }
+  
+  video {
+            width: 70%;
+            display: block;
+            margin: 0 auto;
+            padding-top: 5em;
+            align-items: center;
+            justify-content: center;
+        }
+    
+.container{
+        width: 68%;
+        margin: 0 auto;
+        padding-top: 2em;
+        padding-bottom: 7em;
+        color: white;
+        line-height: 2;
+        text-align: left;
+    }
+
+.container .Name{
+    font-size: 4.3vw;
+    padding-bottom: 10px;
+}
+.container .letter{
+    font-size: 1.8vw;
+}
+.white-line{
+    height: 0.2px; 
+    background-color: rgb(48, 48, 48);
+    margin: 4em auto;
+}
+.container .key{
+    padding-bottom: 3em;
+}
+.container .key_title{
+    font-size: 2.2vw;
+}
+.container .key_sub{
+    font-size: 1.6vw;
+}
+
+</style>
+</head>
+
+<body>
+<div class="logo">
+    <a href="../1.Main.html"><img src="../Asset/logo.png" alt="로고"></a>
+</div>
+<div class="icon" onclick="toggleNavbar()">
+    <img src="../Asset/icon.png" alt="메뉴아이콘">
+</div>
+<div class="navbar" id="navbar">
+  <a href="../3.1.About_Project.html">프로젝트 소개</a>
+  <a href="../3.2.Exhibition.html">전시 안내</a>
+  <a href="../3.3.Thank.html">감사한 분들</a>
+</div>
+
+<video id="videoPlayer" src="../Asset/Video/5.mp4" autoplay></video>
+    <button id="togglePlay" class="video-control">멈춤</button>
+
+    <script>
+        const videoPlayer = document.getElementById('videoPlayer');
+        const togglePlayButton = document.getElementById('togglePlay');
+
+        togglePlayButton.addEventListener('click', function() {
+            if (videoPlayer.paused) {
+                videoPlayer.play();
+                togglePlayButton.textContent = '멈춤';
+            } else {
+                videoPlayer.pause();
+                togglePlayButton.textContent = '이어듣기';
+            }
+        });
+    </script>
+
+<div class="container">
+    <div class = 'Name'>김란사</div>
+    <div class = 'letter'>1918년, 안창호 선생에게 쓴 서신</div>
+
+    <div class="white-line"></div>
+
+    <div class="key">
+        <div class="key_title">✢ 이화학당</div>
+        <div class="key_sub"><p>1984년 금혼 학칙으로 인해 입학을 거부당했으나, "우리가 캄캄하기를 이 등불 꺼진 것과 같습니다.
+            어머니들이 무언가 배우고 알아야 자식을 가르칠 수 있지 않겠습니까?"라는 그녀의 말에 감명받은 교장이 입학을 허가하였다.</p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 한국 최초의 여성 교수</div>
+        <div class="key_sub"><p>1906년 한국 여성으로는 최초로 문학사 학위를 취득, 귀국하여 모교인 이화학당에 교사로 부임하여
+            영어와 성경 등을 가르쳤다. 제자 중에는 유관순이 있다.</p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 이문회 지도 교사</div>
+        <div class="key_sub"><p>유관순이 가담해 활동한 이화학당 학생자치단체, 이문회를 이끌며 민족의식을 고취하였다.
+            이문회에서는 당시 학생들에게 민족이 처한 현실과 세계 정세를 가르쳤다.</p>
+        </div>
+    </div>
+
+    <div class="key">
+        <div class="key_title">✢ 파이프오르간</div>
+        <div class="key_sub"><p>1916년부터 미국에 2년간 머물며 독립자금을 모은 결과, 1918년 최초로 정동교회에 파이프오르간을 설치했다.
+            파이프오르간의 지하 송풍실은 기미독립선언서와 독립신문을 찍어내는 장소로 이용되었다.</p>
+        </div>
+    </div>
+</div>
+
+<button id="scrollTopButton" title="맨 위로 가기">↑</button>
+<script src="../topbutton.js"></script>
+
+<script>
+function toggleNavbar() {
+  var navbar = document.getElementById("navbar");
+  if (navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  } else {
+    navbar.classList.add('active');
+  }
+}
+function toggleNavbar(event) {
+  var navbar = document.getElementById("navbar");
+  navbar.classList.toggle('active');
+  event.stopPropagation();
+}
+document.addEventListener('click', function(event) {
+  var navbar = document.getElementById('navbar');
+  if (!event.target.closest('.icon') && navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  }
+});
+</script>
+
+</body>
+</html>

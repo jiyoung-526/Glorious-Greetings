@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메인 홈 - 독립운동가 목소리 추정 프로젝트</title>
+<link rel="stylesheet" type="text/css" href="top.css">
+<link rel="stylesheet" type="text/css" href="nav.css">
+<link rel="stylesheet" type="text/css" href="footer.css">
+<link rel="stylesheet" type="text/css" href="scrollTop.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300&family=Oswald:wght@200&family=Young+Serif&display=swap');
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif KR', serif;
+    text-align: center;
+    background-color: black;
+  }
+
+  .content{
+    width: 80%;
+    margin: 0 auto;
+    padding: 150px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+  .Subtitle1{
+    font-size: 1.5em;
+    color: #eeeeee;
+  }
+
+  .Subtitle2{
+    padding-top: 85px;
+    font-size: 1.5em; /* 소제목 글자 크기 */
+    color: #eeeeee; /* 소제목 글자 색상 */
+  }
+
+  .institution-logos {
+    padding-top: 40px;
+    padding-left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .institution-logos .logo-item {
+    display: flex; /* 이미지와 텍스트를 가로로 나란히 배열 */
+    align-items: center; /* 세로 방향으로 중앙 정렬 */
+    justify-content: center;
+    margin-bottom: 15px; /* 로고 사이 여백 */
+    width: 100%;
+    max-width: 419px;
+  }
+  .institution-logos .logo-item .logo-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 텍스트와 이미지를 컨테이너 시작 부분에 정렬 */
+    width: 100%;
+  }
+
+  .institution-logos .logo-item img {
+    margin-right: 8px; /* 이미지&텍스트 사이 여백 */
+  }
+
+  .institution-logos .logo-item span {
+    text-align: left; /* 텍스트 좌측 정렬*/
+    display: block;
+  }
+
+  .logo2{
+    padding-top: 40px;
+  }
+
+  .institution-logos img {
+    width: 8.5em;
+    height: auto;
+    /* 기타 필요한 스타일 */
+  }
+  .institution-logos .logo-item span {
+    color: #b0b0b0;
+    font-size: 0.8em;
+  }
+  .logo2 img{
+    width: 8em;
+    height: auto;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="logo">
+    <a href="1.Main.html"><img src="Asset/logo.png" alt="로고"></a>
+</div>
+
+<div class="icon" onclick="toggleNavbar()">
+    <img src="Asset/icon.png" alt="메뉴아이콘">
+</div>
+
+<div class="navbar" id="navbar">
+  <a href="3.1.About_Project.html">프로젝트 소개</a>
+  <a href="3.2.Exhibition.html">전시 안내</a>
+  <a href="3.3.Thank.html">감사한 분들</a>
+</div>
+
+<div class="content">
+    <div class="Subtitle1">자료 제공</div>
+    <div class="institution-logos">
+      <div class="logo-item">
+        <div class="logo-text-container">
+          <img src="../Asset/Thank/1.svg" alt="기관 로고">
+          <span>이연호, 안창호, 이관술, 이육사, 윤봉길 사진 제공</span>
+        </div>
+      </div>
+      <div class="logo-item">
+        <div class="logo-text-container">
+          <img src="../Asset/Thank/2.svg" alt="기관 로고">
+          <span>김란사 사진 제공</span>
+        </div>
+      </div>
+      <div class="logo-item">
+        <div class="logo-text-container">
+          <img src="../Asset/Thank/3.svg" alt="기관 로고">
+          <span>손정도, 김지섭 사진 제공</span>
+        </div>
+      </div>
+      <div class="logo-item">
+        <div class="logo-text-container">
+          <img src="../Asset/Thank/4.svg" alt="기관 로고">
+          <span>심훈 사진 제공</span>
+        </div>
+      </div>
+      <div class="logo-item">
+        <div class="logo-text-container">
+          <img src="../Asset/Thank/5.svg" alt="기관 로고">
+          <span>서영해 사진 제공</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="Subtitle2">후원</div>
+    <div class="logo2">
+        <img src="../Asset/KEGlogo.svg" alt="김의기 로고">
+    </div>
+</div>
+
+<script>
+function toggleNavbar() {
+  var navbar = document.getElementById("navbar");
+  if (navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  } else {
+    navbar.classList.add('active');
+  }
+}
+function toggleNavbar(event) {
+  var navbar = document.getElementById("navbar");
+  navbar.classList.toggle('active'); // 'active' 클래스를 토글
+  event.stopPropagation();
+}
+document.addEventListener('click', function(event) {
+  var navbar = document.getElementById('navbar');
+  // 클릭된 요소가 네비게이션바를 토글하는 아이콘이 아닐 경우 네비게이션바 비활성화
+  if (!event.target.closest('.icon') && navbar.classList.contains('active')) {
+    navbar.classList.remove('active');
+  }
+});
+</script>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section main-section">
+            <p>Team Graffiti. all rights reserved.. all rights reserved.</p>
+            <p></br></br>t. +82 10 7773 5842</p>
+            <p>m. kimgy0526@naver.com</p>
+        </div>
+        <div class="footer-section side-section">
+            <p>사단법인 김의기 기념사업회</p>
+            <p>당진시청 문화관광과</p>
+            <p>부산박물관</p>
+            <p>국사편찬위원회</p>
+            <p>독립기념관</p>
+            <p>김란사 후손 김영택님</p>
+        </div>
+    </div>
+</footer>
+
+<button id="scrollTopButton" title="맨 위로 가기">↑</button>
+<script src="../topbutton.js"></script>
+
+</body>
+</html>
