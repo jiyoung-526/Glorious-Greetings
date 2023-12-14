@@ -14,7 +14,7 @@
     margin: 0;
     font-family: 'Noto Serif KR', serif;
     background-color: black; 
-    background-image: url('../Asset/BackGrain.png');
+    background-image: url('Asset/BackGrain.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -33,10 +33,10 @@
   }
   .gallery .image-box {
     flex: none;
-    width: 12.5em;
-    height: 28em;
+    width: 15em;
+    height: 32em;
     margin: 1.35em;
-    margin-top: 10em; /* 기본 상단 마진을 홀수 번째 요소에 맞춤 */
+    margin-top: 16em; /* 기본 상단 마진을 홀수 번째 요소에 맞춤 */
     background-color: #000000; /* 갤러리 박스 배경색 */
     display: flex;
     justify-content: center;
@@ -66,7 +66,7 @@
     }
 
     .gallery .image-box:nth-child(even) {
-        margin-top: 16em; /* 짝수 번째 박스의 상단 마진을 다르게 설정 */
+        margin-top: 22em; /* 짝수 번째 박스의 상단 마진을 다르게 설정 */
     }
     .gallery .image-box img {
         position: absolute; /* 이미지를 박스 안에서 절대 위치시킴 */
@@ -84,7 +84,7 @@
     color: rgb(158, 158, 158); /* 텍스트 색상 */
     padding-left: 0px; /* 텍스트 패딩 */
     padding-top: 0.1em; padding-bottom: 0.1em;
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: lighter;
     }
     .gallery .image-box:nth-child(odd)::after {
