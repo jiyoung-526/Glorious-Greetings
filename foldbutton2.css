@@ -2,7 +2,7 @@
     .bottom-buttons {
         position: fixed;
         bottom: 1em;
-        left: 43%;
+        left: 48%;
         transform: translateX(-30%);
         display: flex;
         justify-content: center;
